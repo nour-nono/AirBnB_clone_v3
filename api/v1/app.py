@@ -16,8 +16,10 @@ def close():
 
 
 if __name__ == '__main__':
-    if os.getenv('HBNB_API_HOST') and os.getenv('HBNB_API_PORT'):
-        app.run(host=os.getenv('HBNB_API_HOST'),
-                port=os.getenv('HBNB_API_PORT'), threaded=True)
-    else:
-        app.run(host='0.0.0.0', port=5000, threaded=True)
+    host = '0.0.0.0'
+    port = 5000
+    if os.getenv('HBNB_API_HOST'):
+        host = os.getenv('HBNB_API_HOST')
+    if os.getenv('HBNB_API_PORT'):
+        port = os.getenv('HBNB_API_PORT')
+    app.run(host=host, port=port, threaded=True)
