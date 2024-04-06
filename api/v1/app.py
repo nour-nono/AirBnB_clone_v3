@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+"""Main module"""
 from flask import Flask
 import os
 from api.v1.views import app_views
@@ -11,6 +11,7 @@ app.register_blueprint(app_views)
 
 @app.teardown_appcontext
 def close():
+    """Close the session"""
     storage.close()
 
 
