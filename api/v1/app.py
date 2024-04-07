@@ -2,7 +2,7 @@
 """Main module"""
 
 
-from flask import Flask
+from flask import Flask, jsonify, make_response
 from models import storage
 import os
 from api.v1.views import app_views
@@ -15,6 +15,11 @@ app.register_blueprint(app_views)
 def close(self):  # self argument is mandatory don't ask me why
     """Close the session"""
     storage.close()
+
+
+@app.errorhandler(404)
+def error_page(e):
+    return make_response(jsonify(error="Not found"), e)
 
 
 if __name__ == '__main__':
