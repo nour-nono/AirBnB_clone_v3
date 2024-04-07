@@ -19,7 +19,7 @@ def close(self):  # self argument is mandatory don't ask me why
 
 @app.errorhandler(404)
 def error_page(e):
-    return make_response(jsonify(error="Not found"), e)
+    return make_response(jsonify(error="Not found"), 404)
 
 
 if __name__ == '__main__':
