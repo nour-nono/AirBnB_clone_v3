@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""Module for views"""
 from flask import Blueprint
 
 
