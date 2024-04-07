@@ -6,12 +6,6 @@ from api.v1.views import app_views
 
 
 @app_views.route('/status', strict_slashes=False)
-def status_ok():
-	"""Return status"""
-	return jsonify(status="OK")
-
-
-@app_views.route('/status', strict_slashes=False)
 def status_all_obj():
 	"""Return status for all obj"""
 	classes = ["Amenity", "City", "Place", "Review", "State", "User"]
