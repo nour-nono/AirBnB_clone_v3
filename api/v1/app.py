@@ -13,7 +13,7 @@ app.url_map.strict_slashes = False
 
 
 @app.teardown_appcontext
-def close():
+def close(self):
     """Close the session"""
     storage.close()
 
